@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horalix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&family=Oswald:wght@500;700&family=Merriweather:wght@300;400;700;900&family=Space+Grotesk:wght@300;500;700&family=Rajdhani:wght@500;700&display=swap');
+      
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #000;
+      }
+      
+      .font-mono { font-family: 'JetBrains Mono', monospace; }
+      .font-sans { font-family: 'Inter', sans-serif; }
+      .font-news { font-family: 'Oswald', sans-serif; }
+      .font-serif { font-family: 'Merriweather', serif; }
+      .font-tech { font-family: 'Space Grotesk', sans-serif; }
+      .font-sci { font-family: 'Rajdhani', sans-serif; }
+
+      /* Custom scrollbar hiding */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* FASTER FADE - 0.5s (Kept for reference/fallback) */
+      .animate-fade-in-fast {
+        animation: fade-in 0.5s ease-in-out forwards;
+      }
+
+      /* SMOOTH FADE - 0.4s */
+      .animate-fade-smooth {
+        animation: fade-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+
+      /* ULTRA FAST FLASH - 0.15s */
+      .animate-fade-flash {
+        animation: fade-in 0.15s ease-out forwards;
+      }
+
+      @keyframes fade-in {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      /* Ticker Animation */
+      @keyframes ticker {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .animate-ticker {
+        animation: ticker 20s linear infinite;
+      }
+      .animate-ticker-fast {
+        animation: ticker 5s linear infinite;
+      }
+      .animate-ticker-reverse {
+        animation: ticker 20s linear infinite reverse;
+      }
+      .animate-ticker-fast-reverse {
+        animation: ticker 6s linear infinite reverse;
+      }
+
+      /* New Ambient Animations */
+      @keyframes scan-vertical {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+      }
+      .animate-scan-vertical {
+        animation: scan-vertical 3s linear infinite;
+      }
+
+      @keyframes slow-pan {
+        0% { background-position: 0% 0%; }
+        100% { background-position: 100% 100%; }
+      }
+      .animate-slow-pan {
+        animation: slow-pan 60s linear infinite;
+      }
+
+      @keyframes slow-pan-x {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(-5%); }
+        100% { transform: translateX(0); }
+      }
+      .animate-slow-pan-x {
+        animation: slow-pan-x 20s ease-in-out infinite;
+      }
+      
+      @keyframes drift-up {
+        0% { transform: translateY(0); opacity: 0.1; }
+        100% { transform: translateY(-50px); opacity: 0; }
+      }
+      .animate-drift-up {
+        animation: drift-up 10s linear infinite;
+      }
+
+      @keyframes crt-flicker {
+        0% { opacity: 0.9; }
+        50% { opacity: 0.95; }
+        100% { opacity: 0.9; }
+      }
+      .animate-crt-flicker {
+        animation: crt-flicker 0.15s infinite;
+      }
+      
+      @keyframes dash {
+        to {
+          stroke-dashoffset: -100;
+        }
+      }
+      .animate-dash {
+        animation: dash 2s linear infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      @keyframes subtle-shine {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+      .animate-shine {
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        background-size: 200% 100%;
+        animation: subtle-shine 3s infinite linear;
+      }
+
+      /* --- TEXT ANIMATIONS --- */
+      
+      @keyframes text-breathe {
+        0%, 100% { opacity: 1; letter-spacing: -0.02em; }
+        50% { opacity: 0.9; letter-spacing: -0.01em; }
+      }
+      .animate-text-breathe {
+        animation: text-breathe 4s ease-in-out infinite;
+      }
+
+      @keyframes text-shimmer {
+        0% { background-position: 200% center; }
+        100% { background-position: -200% center; }
+      }
+      .animate-text-shimmer {
+        background-size: 200% auto;
+        animation: text-shimmer 3s linear infinite;
+      }
+
+      @keyframes text-glitch-skew {
+        0% { transform: skew(0deg); }
+        20% { transform: skew(-2deg); }
+        40% { transform: skew(2deg); }
+        60% { transform: skew(-1deg); }
+        80% { transform: skew(1deg); }
+        100% { transform: skew(0deg); }
+      }
+      .animate-text-glitch {
+        animation: text-glitch-skew 0.5s infinite;
+      }
+
+      @keyframes text-pop {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+        100% { transform: scale(1); }
+      }
+      .animate-text-pop {
+        animation: text-pop 2s ease-in-out infinite;
+      }
+
+      @keyframes text-focus {
+        0% { filter: blur(0px); }
+        50% { filter: blur(1px); }
+        100% { filter: blur(0px); }
+      }
+      .animate-text-focus {
+        animation: text-focus 3s infinite;
+      }
+      
+      /* New Grid Pan for Cyber */
+      @keyframes grid-pan {
+        0% { background-position: 0 0; }
+        100% { background-position: 50px 50px; }
+      }
+      .animate-grid-pan {
+        animation: grid-pan 2s linear infinite;
+      }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
