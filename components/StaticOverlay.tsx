@@ -1,5 +1,5 @@
 import React from 'react';
-import { Theme } from '../types';
+import { Theme } from '../types.ts';
 import { Menu, Search, User, ChevronRight, Calendar, Share2, Bookmark, Eye, FileText, AlertTriangle, Globe, Lock, Activity, Zap, Database, Satellite, Thermometer, Bitcoin, Atom } from 'lucide-react';
 
 interface StaticOverlayProps {

@@ -1,4 +1,4 @@
-import { Theme } from '../types';
+import { Theme } from '../types.ts';
 
 class SoundEngine {
   private ctx: AudioContext | null = null;

@@ -1,36 +1,36 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { StaticOverlay } from './components/StaticOverlay';
+import { StaticOverlay } from './components/StaticOverlay.tsx';
 // Existing Themes
-import { TechInterface } from './components/themes/TechInterface';
-import { MedicalScreen } from './components/themes/MedicalScreen';
-import { FinancialNews } from './components/themes/FinancialNews';
-import { MainstreamNews } from './components/themes/MainstreamNews';
-import { ScientificJournal } from './components/themes/ScientificJournal';
-import { Tabloid } from './components/themes/Tabloid';
-import { DarkVoid } from './components/themes/DarkVoid';
+import { TechInterface } from './components/themes/TechInterface.tsx';
+import { MedicalScreen } from './components/themes/MedicalScreen.tsx';
+import { FinancialNews } from './components/themes/FinancialNews.tsx';
+import { MainstreamNews } from './components/themes/MainstreamNews.tsx';
+import { ScientificJournal } from './components/themes/ScientificJournal.tsx';
+import { Tabloid } from './components/themes/Tabloid.tsx';
+import { DarkVoid } from './components/themes/DarkVoid.tsx';
 // Earlier New Themes
-import { RadiologyISO } from './components/themes/RadiologyISO';
-import { BioTechDashboard } from './components/themes/BioTechDashboard';
-import { PharmaInventory } from './components/themes/PharmaInventory';
-import { OrangeTerminal } from './components/themes/OrangeTerminal';
-import { LifestyleMag } from './components/themes/LifestyleMag';
-import { VintagePaper } from './components/themes/VintagePaper';
-import { AcademicSummit } from './components/themes/AcademicSummit';
-import { GlobalNetwork } from './components/themes/GlobalNetwork';
-import { LegalBrief } from './components/themes/LegalBrief';
-import { TechCrusader } from './components/themes/TechCrusader';
-import { GovReport } from './components/themes/GovReport';
-import { NeuroJournal } from './components/themes/NeuroJournal';
-import { CardiologyJournal } from './components/themes/CardiologyJournal';
-import { OncologyJournal } from './components/themes/OncologyJournal';
+import { RadiologyISO } from './components/themes/RadiologyISO.tsx';
+import { BioTechDashboard } from './components/themes/BioTechDashboard.tsx';
+import { PharmaInventory } from './components/themes/PharmaInventory.tsx';
+import { OrangeTerminal } from './components/themes/OrangeTerminal.tsx';
+import { LifestyleMag } from './components/themes/LifestyleMag.tsx';
+import { VintagePaper } from './components/themes/VintagePaper.tsx';
+import { AcademicSummit } from './components/themes/AcademicSummit.tsx';
+import { GlobalNetwork } from './components/themes/GlobalNetwork.tsx';
+import { LegalBrief } from './components/themes/LegalBrief.tsx';
+import { TechCrusader } from './components/themes/TechCrusader.tsx';
+import { GovReport } from './components/themes/GovReport.tsx';
+import { NeuroJournal } from './components/themes/NeuroJournal.tsx';
+import { CardiologyJournal } from './components/themes/CardiologyJournal.tsx';
+import { OncologyJournal } from './components/themes/OncologyJournal.tsx';
 // Latest Themes
-import { CyberSecurity } from './components/themes/CyberSecurity';
-import { SpaceExploration } from './components/themes/SpaceExploration';
-import { ClimateData } from './components/themes/ClimateData';
-import { CryptoExchange } from './components/themes/CryptoExchange';
-import { QuantumPhysics } from './components/themes/QuantumPhysics';
+import { CyberSecurity } from './components/themes/CyberSecurity.tsx';
+import { SpaceExploration } from './components/themes/SpaceExploration.tsx';
+import { ClimateData } from './components/themes/ClimateData.tsx';
+import { CryptoExchange } from './components/themes/CryptoExchange.tsx';
+import { QuantumPhysics } from './components/themes/QuantumPhysics.tsx';
 
-import { Theme } from './types';
+import { Theme } from './types.ts';
 
 // Component Factory
 const getThemeComponent = (theme: Theme) => {
